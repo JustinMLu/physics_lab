@@ -13,7 +13,7 @@ from . import agents
 
 
 gym.register(
-    id="Template-DoublePendulum-Direct-v0",
+    id="Template-Double-Pendulum-v0",
     entry_point=f"{__name__}.double_pendulum_env:DoublePendulumEnv",
     disable_env_checker=True,
     kwargs={

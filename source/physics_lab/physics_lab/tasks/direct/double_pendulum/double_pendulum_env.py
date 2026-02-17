@@ -50,9 +50,11 @@ class DoublePendulumEnv(DirectRLEnv):
         self.actions = actions.clone()
 
     def _apply_action(self) -> None:
+        # cart: set target force command - TODO: this is where you change the action space controler type (pos/vel/effort)
         self.robot.set_joint_effort_target(
             self.actions[:, 0].unsqueeze(dim=1) * self.cfg.cart_action_scale, joint_ids=self._cart_dof_idx
         )
+        # pole: set target torque command
         self.robot.set_joint_effort_target(
             self.actions[:, 1].unsqueeze(dim=1) * self.cfg.pendulum_action_scale, joint_ids=self._pendulum_dof_idx
         )

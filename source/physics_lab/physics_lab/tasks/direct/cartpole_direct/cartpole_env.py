@@ -15,13 +15,13 @@ from isaaclab.envs import DirectRLEnv
 from isaaclab.sim.spawners.from_files import GroundPlaneCfg, spawn_ground_plane
 from isaaclab.utils.math import sample_uniform
 
-from .cartpole_direct_env_cfg import CartPoleDirectEnvCfg
+from .cartpole_env_cfg import CartPoleEnvCfg
 
 
-class CartPoleDirectEnv(DirectRLEnv):
-    cfg: CartPoleDirectEnvCfg
+class CartPoleEnv(DirectRLEnv):
+    cfg: CartPoleEnvCfg
 
-    def __init__(self, cfg: CartPoleDirectEnvCfg, render_mode: str | None = None, **kwargs):
+    def __init__(self, cfg: CartPoleEnvCfg, render_mode: str | None = None, **kwargs):
         super().__init__(cfg, render_mode, **kwargs)
 
         self._cart_dof_idx, _ = self.robot.find_joints(self.cfg.cart_dof_name)

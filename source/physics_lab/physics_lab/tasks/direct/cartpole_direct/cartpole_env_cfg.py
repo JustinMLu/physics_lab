@@ -13,7 +13,7 @@ from isaaclab.utils import configclass
 
 
 @configclass
-class CartPoleDirectEnvCfg(DirectRLEnvCfg):
+class CartPoleEnvCfg(DirectRLEnvCfg):
     # env
     decimation = 2
     episode_length_s = 5.0
