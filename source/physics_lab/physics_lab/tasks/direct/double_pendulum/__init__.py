@@ -13,11 +13,11 @@ from . import agents
 
 
 gym.register(
-    id="Template-CartPole-Direct-v0",
-    entry_point=f"{__name__}.cartpole_direct_env:CartPoleDirectEnv",
+    id="Template-DoublePendulum-Direct-v0",
+    entry_point=f"{__name__}.double_pendulum_env:DoublePendulumEnv",
     disable_env_checker=True,
     kwargs={
-        "env_cfg_entry_point": f"{__name__}.cartpole_direct_env_cfg:CartPoleDirectEnvCfg",
+        "env_cfg_entry_point": f"{__name__}.double_pendulum_env_cfg:DoublePendulumEnvCfg",
         "rsl_rl_cfg_entry_point": f"{agents.__name__}.rsl_rl_ppo_cfg:PPORunnerCfg",
     },
 )
