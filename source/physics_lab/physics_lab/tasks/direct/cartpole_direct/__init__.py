@@ -13,7 +13,7 @@ from . import agents
 
 
 gym.register(
-    id="Template-CartPole-Direct-v0",
+    id="CartPole-Direct-v0",
     entry_point=f"{__name__}.cartpole_direct_env:CartPoleDirectEnv",
     disable_env_checker=True,
     kwargs={
