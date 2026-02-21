@@ -1,0 +1,37 @@
+# config to force PR summary only
+language: "en-US"
+
+reviews:
+  # enable high level summary
+  high_level_summary: true
+  high_level_summary_in_walkthrough: false  # puts it in PR description itself, not a comment
+
+  # disable literally everything else
+  profile: "chill"
+  request_changes_workflow: false
+  review_status: false
+  poem: false
+  collapse_walkthrough: false
+  sequence_diagrams: false
+  changed_files_summary: false
+  estimate_code_review_effort: false
+  assess_linked_issues: false
+  related_issues: false
+  related_prs: false
+  suggested_labels: false
+  auto_apply_labels: false
+  suggested_reviewers: false
+  auto_assign_reviewers: false
+  in_progress_fortune: false
+  enable_prompt_for_ai_agents: false
+
+  # exclude ALL files from actual code review (no inline comments)
+  path_filters:
+    - "!**"
+
+  auto_review:
+    enabled: true
+    drafts: false
+
+chat:
+  auto_reply: true
